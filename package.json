@@ -1,0 +1,26 @@
+{
+  "name": "biblius",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "acorn": "^6.0.4",
+    "async": "2.1.4",
+    "dotenv": "4.0.0",
+    "git": "^0.1.5",
+    "keystone": "^4.0.0",
+    "lodash": "^4.13.1",
+    "node-sass": "^4.10.0",
+    "node-sass-middleware": "0.11.0",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "eslint": "3.15.0",
+    "eslint-config-keystone": "3.0.0",
+    "eslint-plugin-react": "^5.1.1",
+    "grunt": "^1.0.3"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node keystone.js"
+  }
+}

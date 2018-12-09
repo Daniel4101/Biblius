@@ -1,0 +1,27 @@
+extends ../layouts/default
+block intro
+	.container
+		h1 Registration 
+	.container
+		.col-sm-8.col-md-6.row
+			form( action = '/register', method='post')
+				.form-group
+					label Name
+					input(type='text', name='name', value=form['name']).form-control
+				.form-group
+					label surrname
+					input(type='text', name='surrname', value=form['surrname']).form-control
+				.form-group
+					label Email
+					input(type='email', name='email', value=form.email).form-control
+				.form-group
+					label Phone
+					input(type='text', name='phone', value=form.phone, placeholder='(optional)').form-control
+				.form-group
+					label Password
+					input(type="password", name="password").form-control
+				.form-group
+					label Retype password
+					input(type="password", name="passwordAgain").form-control
+				.form-actions
+					button(type='submit').btn.btn-primary Send
