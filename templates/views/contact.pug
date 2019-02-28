@@ -1,11 +1,12 @@
 extends ../layouts/default
 
-block intro
-	.container
-		h1 Contact Us
-		
 block content
-	.container
+	section.about
+		h2 Biblioteka
+		div
+			p Biblius jest studenckim projektem serwisu internetowego dla biblotek. Twórcami są Daniel Biesiada i Paweł Kolasiński. W zamyśle jest to system mający być przyjazny zarówno dla czytelnika, jak i bibliotekarza, 	przechowujący książki, audiobooki, filmy, grafikę i czasopisma.
+			p Całość została oparta na CMS keystone.js. Strona jest w pełni responsywna. Szata graficzna została wykonana od podstaw i nie jest oparta na żadnym szablonie.
+	//.container
 		if enquirySubmitted
 			h3 Thanks for getting in touch.
 		else

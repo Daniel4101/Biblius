@@ -1,93 +1,36 @@
-//- extends ../layouts/default
-
-//- mixin post(book)
-//-     .book(data-ks-editable=editable(user, { list: 'Book', id: book.id }))
-//-         h2: a(href='/books/book/'  +book.slug)= book.title
-//-         p.lead.text-muted Posted 
-//-             if book.publishedDate
-//-                 | on #{book._.publishedDate.format('MMMM Do, YYYY')}			
-//-             if book.author
-//-                 | by #{book.author}
-//-         if book.image.exists
-//-             img(src=book._.image.fit(160,160)).img.pull-right
-//-         p!= book.content.brief
-//-         if book.content.extended
-//-             p.read-more: a(href='/blog/book/' + book.slug) Read more...
-
-//- //- block intro
-//- //-     .container
-//- //-         h1= books.bookCategory ? books.bookCategory.name : 'Blog'
-
-//- block content
-//-     .container: .row
-//-         .col-sm-8.col-md-9            
-//-             h4.text-weight-normal Showing #{utils.plural(books.length, '* post')}.
-//-             .blog
-//-                 each book in books
-//-                     +post(book)
-
-//-                     if books.totalPages > 1
-//-                         ul.pagination
-//-                             if books.previous
-//-                                 li: a(href='?page=' + books.previous): span.glyphicon.glyphicon-chevron-left
-//-                             else
-//-                                 li.disabled: a(href='?page=' + 1): span.glyphicon.glyphicon-chevron-left
-//-                             each p, i in books.pages
-//-                                 li(class=books.currentPage == p ? 'active' : null)
-//-                                     a(href='?page=' + (p == '...' ? (i ? books.totalPages : 1) : p ))= p
-//-                             if books.next
-//-                                 li: a(href='?page=' + books.next): span.glyphicon.glyphicon-chevron-right
-//-                             else
-//-                                 li.disabled: a(href='?page=' + books.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
-//-                 else
-//-                     if books.bookCategory
-//-                         h3.text-muted There are no posts in the category #{books.bookCategory.name}.
-//-                     else
-//-                         h3.text-muted There are no posts yet.
-
-//-         //- if books.bookCategory.length
-//-         //-     .col-sm-4.col-md-3
-//-         //-         h2 Categories
-//-         //-         .list-group(style='margin-top: 70px;')
-//-         //-             a(href='/blog', class=!books.bookCategory ? 'active' : false).list-group-item All Categories
-//-         //-             each cat in books.bookCategory
-//-         //-                 a(href='/blog/' + cat.key, class=books.bookCategory && books.bookCategory.id == cat.id ? 'active' : false).list-group-item= cat.name
-
-
 extends ../layouts/default
 mixin post(book)
-    .book(data-ks-editable=editable(user, { list: 'Book', id: book.id }))
-        if book.image.exists
-            img(src=book._.image.fit(300,300)).img
-        h4: a.book-title(href='/books/book/'  +book.slug)= book.title
-        p.status: = book.state
+	.book(data-ks-editable=editable(user, { list: 'Book', id: book.id }))
+		if book.image.exists
+			img(src=book._.image.fit(300,300)).img
+		h4: a.book-title(href='/books/book/'  +book.slug)= book.title
+		p.status: = book.state
 
 block intro
-    section.blog-page
-        .container
-            h3= books.BookCategry ? books.BookCategry.name : 'Książki'
+	section.blog-page
+		.container
+			h3= books.BookCategry ? books.BookCategry.name : 'Ksi??ki'
 
 block content
-    .container: .row
-        .blog
-            each book in books
-                +post(book)
-                if books.totalPages > 1
-                    ul.pagination
-                        if books.previous
-                            li: a(href='?page=' + books.previous): span.glyphicon.glyphicon-chevron-left
-                        else
-                            li.disabled: a(href='?page=' + 1): span.glyphicon.glyphicon-chevron-left
-                        each p, i in books.pages
-                            li(class=books.currentPage == p ? 'active' : null)
-                                a(href='?page=' + (p == '...' ? (i ? books.totalPages : 1) : p ))= p
-                        if books.next
-                            li: a(href='?page=' + books.next): span.glyphicon.glyphicon-chevron-right
-                        else
-                            li.disabled: a(href='?page=' + books.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
-            else
-                if books.category
-                    h3.text-muted There are no posts in the category #{data.category.name}.
-                else
-                    h3.text-muted There are no posts yet.
-
+	.container: .row
+		.blog
+			each book in books
+				+post(book)
+				if books.totalPages > 1
+					ul.pagination
+						if books.previous
+							li: a(href='?page=' + books.previous): span.glyphicon.glyphicon-chevron-left
+						else
+							li.disabled: a(href='?page=' + 1): span.glyphicon.glyphicon-chevron-left
+						each p, i in books.pages
+							li(class=books.currentPage == p ? 'active' : null)
+								a(href='?page=' + (p == '...' ? (i ? books.totalPages : 1) : p ))= p
+						if books.next
+							li: a(href='?page=' + books.next): span.glyphicon.glyphicon-chevron-right
+						else
+							li.disabled: a(href='?page=' + books.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
+			else
+				if books.category
+					h3.text-muted Nie ma ksi??ek w tej kategorii #{data.category.name}.
+				else
+					h3.text-muted Niestety nie mamy takiej ksi??ki

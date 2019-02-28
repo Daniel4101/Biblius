@@ -6,69 +6,51 @@ module.exports = function (grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: 'sources/styles',
+						cwd: 'public/styles',
 						src: '**/*.css',
 						dest: 'www/styles'
 					},
 					{
 						expand: true,
-						cwd: 'sources/styles/overrides',
-						src: '**/*.css',
-						dest: 'www/styles/overrides'
-					},
-					{
-						expand: true,
-						cwd: 'sources/images',
+						cwd: 'public/images',
 						src: '**',
 						dest: 'www/images'
 					},
 					{
 						expand: true,
-						cwd: 'sources/favicons',
+						cwd: 'public/favicons',
 						src: '**',
 						dest: 'www/favicons'
 					},
 					{
 						expand: true,
-						cwd: 'sources/download',
-						src: '**',
-						dest: 'www/download'
-					},
-					{
-						expand: true,
-						cwd: 'sources/video',
+						cwd: 'public/video',
 						src: '**',
 						dest: 'www/video'
 					},
 					{
 						expand: true,
-						cwd: 'sources/scripts',
+						cwd: 'public/js',
 						src: '**',
 						dest: 'www/scripts'
 					},
 					{
 						expand: true,
-						cwd: 'sources/fonts',
+						cwd: 'public/fonts',
 						src: '**',
 						dest: 'www/fonts'
 					},
 					{
 						expand: true,
-						cwd: 'node_modules/typeface-dancing-script/files',
+						cwd: 'node_modules/typeface-lato/files',
 						src: '**',
-						dest: 'www/fonts/dancing-script'
+						dest: 'www/fonts/lato'
 					},
 					{
 						expand: true,
-						cwd: 'node_modules/raleway-webfont/fonts',
+						cwd: 'node_modules/typrface-lora/files',
 						src: '**',
-						dest: 'www/fonts/raleway'
-					},
-					{
-						expand: true,
-						cwd: 'node_modules/roboto-fontface/fonts/roboto',
-						src: '**',
-						dest: 'www/fonts/roboto'
+						dest: 'www/fonts/lora'
 					},
 					{
 						expand: true,
@@ -143,7 +125,7 @@ module.exports = function (grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: 'sources/styles/',
+					cwd: 'public/styles/',
 					src: ['**/*.sass'],
 					dest: 'www/styles/',
 					ext: '.css',
@@ -153,35 +135,35 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			css: {
-				files: 'sources/styles/**/*.css',
+				files: 'public/styles/**/*.css',
 				tasks: ['copy']
 			},
 			sass: {
-				files: 'sources/styles/**/*.sass',
+				files: 'public/styles/**/*.sass',
 				tasks: ['sass']
 			},
 			images: {
-				files: 'sources/images/**/*',
+				files: 'public/images/**/*',
 				tasks: ['copy']
 			},
 			favicons: {
-				files: 'sources/favicons/**/*',
+				files: 'public/favicons/**/*',
 				tasks: ['copy']
 			},
 			download: {
-				files: 'sources/download/**/*',
+				files: 'public/download/**/*',
 				tasks: ['copy']
 			},
 			video: {
-				files: 'sources/video/**/*',
+				files: 'public/video/**/*',
 				tasks: ['copy']
 			},
 			scripts: {
-				files: 'sources/scripts/**/*.js',
+				files: 'public/scripts/**/*.js',
 				tasks: ['copy']
 			},
 			views: {
-				files: 'sources/views/**/*.pug',
+				files: 'public/views/**/*.pug',
 				tasks: ['pug']
 			}
 		}
