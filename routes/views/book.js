@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var Book = keystone.list('Book');
 exports = module.exports = function (req, res) {
 
     var view = new keystone.View(req, res);
@@ -9,18 +10,16 @@ exports = module.exports = function (req, res) {
     locals.filters = {
         book: req.params.book,
     };
-    locals.data = {
-        books: [],
-        bookCategory: [],
-    };
+    locals.data = {};
     view.on('init', function(next){
         var q = keystone.list('Book').model.findOne({
-            slug: locals.filters.book
+            slug: req.params.slug
         });
     q.exec(function(err,result){
         locals.data.book = result;
         next(err)
-    });   
+    });
+   
 });
 
 view.render('book');

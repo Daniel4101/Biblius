@@ -8,7 +8,7 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
-
+var keystone = require('keystone');
 
 /**
 	Initialises the standard view locals
@@ -23,11 +23,22 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Blog', key: 'blog', href: '/blog' },
 		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
 		{ label: 'Contact', key: 'contact', href: '/contact' },
+		{ label: 'Books', key: 'books', href: '/books' },
+		{ label: 'Register', key: 'register', href: '/register' },
+		{ label: 'Login', key: 'login', href: '/login' },
 	];
 	res.locals.user = req.user;
+	if (!keystone.session.cart) {
+		keystone.session.cart = [];
+	}
+	// Calculate total quantity and price of items in cart
+	var cartTotalQty = 0;
+	keystone.session.cart.forEach((item) => {
+		cartTotalQty += 1;
+	});
+	res.locals.cartTotalQty = cartTotalQty;
 	next();
 };
-
 
 /**
 	Fetches and clears the flashMessages before a view is rendered

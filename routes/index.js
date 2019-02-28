@@ -41,8 +41,15 @@ exports = module.exports = function (app) {
 	app.get('/books/book/:slug', routes.views.book);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
-	app.all('/register', routes.views.register)
+	app.all('/register', routes.views.register);
+	app.get('/cart', routes.views.cart);
+	app.all('/login',routes.views.signin)
+	app.get('/query',routes.views.query)
 	
+//API
+	app.all('/add-to-cart/:_id', routes.views.api.addToCart);
+	app.get('/remove-from-cart/:_id', routes.views.api.removeFromCart);
+	app.all('/checkout', routes.views.api.placeOrder);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

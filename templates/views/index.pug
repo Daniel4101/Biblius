@@ -10,6 +10,11 @@ block content
 			| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
 		p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
 		hr
+		p Search:
+			form.form-inline(action='/query', method='get')
+				div.form-group
+					input(type="text" class="form-control" name = 'name')
+					input.search(type='submit' name = 'Name')
 		if user && user.canAccessKeystone
 			p
 				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI

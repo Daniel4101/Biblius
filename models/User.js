@@ -13,22 +13,7 @@ User.add({
 	password: { type: Types.Password, initial: true, required: true },
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true }
-	//  isRoot: {
-	//  		type: Boolean,
-	//  		label: 'Administrator',
-	//  		index: true,
-	//  		dependsOn: {
-	//  			isRoot: true
-	//  		}
-	//  	},
-	//  	isManager: {
-	//  		type: Boolean,
-	//  		label: 'Channel manager',
-	//  		index: true,
-	//  		dependsOn: {
-	//  			isRoot: true
-	//  		}
-	//  	}
+
 });
 
 // Provide access to Keystone

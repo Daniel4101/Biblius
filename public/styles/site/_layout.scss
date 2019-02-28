@@ -1,16 +1,363 @@
-#header {
+body {
+	background-color: $background;
+	position: relative;
+	min-height: 100%;
+	height: 100%;
+}
+
+h3 {
+	color: $main-green;
+}
+
+p {
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+	text-transform: none;
+	color: $text-black;
+}
+
+a:hover {
+	text-decoration: none;
+	text-transform: none;
+}
+
+#body {
+	padding-top: 154px;
+}
+
+.back {
 	margin-top: 30px;
 }
 
+//** HEADER **//
+
+#brand-name {
+	font-weight: 800;
+}
+
+#header {
+	padding-top: 15px;
+	background-color: $main-green;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+}
+
+#header h1 {
+	display: inline-block;
+}
+
+#header .search-bar {
+	padding-top: 25px;
+	display: inline-block;
+	float: right;
+}
+
+#header .search-bar input {
+	width: 380px;
+	height: 40px;
+	margin: auto;
+	padding: 5px;
+	border-radius: 12px;
+	border: 2px solid $white;
+	background-color: $light-gray;
+}
+
+.navbar.navbar-default {
+	background: none;
+	border: none;
+}
+
+.nav.navbar-nav.navbar-left li a {
+	color: $text-black;
+	font-family: "Lato";
+	font-size: 20px;
+	font-weight: 500;
+}
+
+//** FOOTER **//
+
 #footer {
-	margin-top: 30px;
 	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
+	background-color: $main-green;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#footer .footer-bottom {
+	background-color: $background;
+	color: $text-black;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#footer .footer-bottom p {
+	padding: 0 20px;
+}
+
+.footer-nav {
+	height: 60px;
+}
+
+.footer-nav .collapse.navbar-collapse ul li a {
+	line-height: 60px;
 }
 
 .gallery-image img{
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+//** HERO IMAGE **//
+
+.hero-image img {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+
+.hero-image h2,
+.hero-image p {
+	width: 100%;
+	text-align: center;
+	margin: auto;
+	position: relative;
+	top: -500px;
+}
+
+.hero-image h2 {
+	font-size: 58px;
+	font-weight: 700;
+	color: $text-black;
+}
+
+.hero-image p {
+	padding-top: 20px;
+	font-family: "Lora";
+	font-size: 32px;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	color: $gray;
+}
+
+.hero-image div {
+	display: flex;
+}
+
+.hero-image div input {
+	width: 25%;
+	height: 40px;
+	margin: auto;
+	padding: 5px;
+	position: relative;
+	top: -470px;
+	border-radius: 12px;
+	border: 2px solid $white;
+	background-color: $light-gray;
+}
+
+//** SECTIONS **//
+
+section h3 {
+	display: inline;
+	font-size: 36px;
+	font-weight: 700;
+	padding-right: 20px;
+	border-bottom: 1px solid $text-black;
+}
+
+.category {
+	width: 100%;
+	min-height: 1000px;
+	background-image: url("../../images/red_books.png");
+	background-size: cover;
+}
+
+.category h2 {
+	display: inline-block;
+	width: 48vw;
+	text-align: center;
+	position: relative;
+	top: 300px;
+	font-size: 70px;
+	font-weight: 800;
+	color: $main-green;
+}
+
+.category ul {
+	display: inline-block;
+	list-style: none;
+	position: relative;
+	top: 360px;
+}
+
+.category ul li {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.about {
+	width: 100%;
+	height: 84vh;
+	background-image: url("../../images/shelf.png");
+	background-size: cover;
+	margin: 0;
+}
+
+.about h2 {
+	display: inline-block;
+	width: 48vw;
+	text-align: center;
+	position: relative;
+	top: 250px;
+	font-size: 90px;
+	font-weight: 800;
+	color: $main-green;
+}
+
+.about div {
+	width: 48vw;
+	display: inline-block;
+	list-style: none;
+	position: relative;
+	top: 300px;
+}
+
+.about div p {
+	width: 70%;
+}
+
+//** REGISTER **//
+
+.register {
+	background-image: url("../../images/red_books.png");
+	background-size: cover;
+}
+
+.register-page {
+	padding: 60px 0 20px 0;
+}
+
+.register-form {
+	margin-bottom: 170px;
+}
+
+.register-btn {
+	width: 120px;
+	height: 40px;
+	background-color: $main-green;
+	color: $text-black;
+	font-size: 16px;
+	font-family: "Lato";
+	font-weight: 500;
+}
+
+//** POSTS **//
+
+.blog-page {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+
+.blog {
+	margin-bottom: 130px;
+}
+
+.post {
+	max-width: 33%;
+	display: inline-grid;
+	padding: 20px;
+	margin: 20px 0;
+	border-right: 1px solid $text-black;
+}
+
+.post .lead {
+	font-size: 16px;
+	text-align: right;
+}
+
+.post h2 {
+	font-weight: 800;
+}
+
+.post img {
+	display: flex;
+	margin: auto;
+}
+
+.single-post {
+	margin-bottom: 175px;
+}
+
+.single-post img {
+	margin-bottom: 20px;
+}
+
+.single-header h5 {
+	float: right;
+	margin-right: 10px;
+}
+
+
+//** GALLERY **//
+
+.gallery-box {
+	margin-bottom: 405px;
+}
+
+.gallery {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+
+.gallery-imgaes {
+	display: inline-block;
+	width: 100%;
+}
+
+.gallery-image {
+	display: inline-block;
+}
+
+.gallery-title {
+	color: $main-green;
+	font-size: 16px;
+}
+
+//** BOOKS **//
+
+.book {
+	display: inline-block;
+	margin: 20px;
+	width: 20%;
+}
+
+.book img {
+	width: 100%;
+}
+
+.book-title {
+	color: $main-green;
+	font-family: "Lato";
+	font-weight: 800;
+}
+
+.book-title:after {
+	content: '';
+	width: 100%;
+	height: 1px;
+	background-color: $text-black;
+}
+
+.status {
+	text-align: center;
+	border-top: 1px solid $text-black;
 }

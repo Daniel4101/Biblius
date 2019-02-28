@@ -1,0 +1,21 @@
+extends ../layouts/default
+block intro
+    .container
+        each book in cartContents
+            if book
+            p.lead.text-muted Posted
+            p.lead.text-muted Posted
+            p.lead.text-muted Posted
+            p.lead.text-muted Posted
+            p.lead.text-muted Posted
+                | name #{book.name}.
+                | id #{book.id}.
+                | qty #{book.quantity}.
+            p.lead.text-muted properties availablble id,name,quantity
+            p.lead.text-muted: a.lead.text-muted(href='/remove-from-cart/' +book.id): span remove from cart
+            p.lead.text-muted: a.lead.text-muted(href='/checkout'): span to check out
+            .lead.text-muted habla asjdhsdjhas dajdaufhsdjf fsd  fhsdkfh sflkdsdhfsh vshdfbhf
+        else
+            p.lead.text-muted there is no book in cart: 
+            p.lead.text-muted: a.lead.text-muted(href='/books'): span go to our books
+            .row

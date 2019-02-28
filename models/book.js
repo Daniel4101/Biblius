@@ -16,6 +16,7 @@ Book.add({
 	state: { type: Types.Select, options: 'Czytelnia, Dostepny, Wypozyczony', default: 'Dostepny', index: true },
 	author: { type: String },
 	Place: { type: String },
+	Qty: {type: Number},
 	bookCategory: { type: Types.Relationship, ref:'bookCategory'},
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'Dostepny' } },
 	image: { type: Types.CloudinaryImage },

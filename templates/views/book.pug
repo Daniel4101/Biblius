@@ -1,1 +1,47 @@
-<p>aaaaaaaą ł</p>
+//- extends ../layouts/default
+
+//- mixin post(book)
+//-     .book(data-ks-editable=editable(user, { list: 'Book', id: data.book._id }))
+//-         h2: a(href='/books/book/'  + data.book.slug)= book.title
+//-         p.lead.text-muted Posted 
+//-             if book.publishedDate
+//-                 | on #{book._.publishedDate.format('MMMM Do, YYYY')}			
+//-             if book.author
+//-                 | by #{book.author}
+//-         if book.image.exists
+//-             img(src=book._.image.fit(160,160)).img.pull-right
+//-         p!= book.content.brief
+//-         if book.content.extended
+//-             p.read-more: a(href='/blog/book/' + book.slug) Read more...
+
+
+
+//- block intro
+//-     .container
+//-         h1 Registration 
+//-         a(href='/add-to-cart/' + data.book._id) alelu
+//-         p(data.book.Qty)
+extends ../layouts/default
+
+block content
+    .container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+        article
+            p: a(href='/blog') &larr; back to the blog
+            hr
+            if !data.book
+                h2 Invalid Post.
+            else
+                header
+                    h1= data.book.title
+                    h5 Posted 
+                        if data.book.publishedDate
+                            | on #{data.book.publishedDate} 
+                        if data.book.author
+                            | by #{data.book.author}
+                        if data.book.Qty
+                            | qty #{data.book.Qty}
+                        a(href='/add-to-cart/' + data.book._id) alelu
+                .post
+                    if data.book.image.exists
+                        .image-wrap: img(src=data.book._.image.fit(750,450)).img-responsive
+                    != data.book.content.full
