@@ -9,15 +9,16 @@ mixin post(post)
 			img(src=post._.image.fit(320, 320)).img
 		h2: a(href='/blog/post/' + post.slug)= post.title
 		p: a(href='/blog/post/' + post.slug)!= post.content.brief
-		
+
 block content
 	.hero-image
 		img(src='/images/books.png')
 		h2 Potrzebujesz książki?
-		p Wyszukaj
-		div
-			input
-			button
+		div Search:
+			form(action='/query', method='get')
+
+				input(type="text"  name = 'name')
+				input.search(type='submit' name = 'Name')
 	.container
 		section
 			h3 Aktualności
