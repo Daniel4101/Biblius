@@ -8,13 +8,13 @@ module.exports = function (grunt) {
 						expand: true,
 						cwd: 'public/styles',
 						src: '**/*.css',
-						dest: 'www/styles'
+						dest: 'public/www/styles'
 					},
 					{
 						expand: true,
 						cwd: 'public/images',
 						src: '**',
-						dest: 'www/images'
+						dest: 'public/www/images'
 					},
 					{
 						expand: true,
@@ -32,13 +32,13 @@ module.exports = function (grunt) {
 						expand: true,
 						cwd: 'public/js',
 						src: '**',
-						dest: 'www/scripts'
+						dest: 'public/www/scripts'
 					},
 					{
 						expand: true,
 						cwd: 'public/fonts',
 						src: '**',
-						dest: 'www/fonts'
+						dest: 'public/www/fonts'
 					},
 					{
 						expand: true,
@@ -90,15 +90,15 @@ module.exports = function (grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'node_modules/font-awesome/fonts',
+						cwd: 'node_modules/@fortawesome/fontawesome-free/webfonts',
 						src: '**',
-						dest: 'www/styles/fonts'
+						dest: 'public/fonts/fontawesome/webfonts'
 					},
 					{
 						expand: true,
-						cwd: 'node_modules/font-awesome/css',
+						cwd: 'node_modules/@fortawesome/fontawesome-free/css',
 						src: '**',
-						dest: 'www/styles/plugins'
+						dest: 'public/fonts/fontawesome/plugins'
 					}
 				]
 			}

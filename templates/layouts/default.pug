@@ -14,7 +14,12 @@ html
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
-		link(href="../../../www/styles/site.css", rel="stylesheet")
+		link(href="/fonts/fontawesome/plugins/site.css", rel="stylesheet")
+		link(href="/fonts/fontawesome/plugins/all.css", rel="stylesheet")
+		link(href="/fonts/fontawesome/plugins/brands.css", rel="stylesheet")
+		link(href="/fonts/fontawesome/plugins/fontawesome.css", rel="stylesheet")
+		link(href="/fonts/fontawesome/plugins/regular.css", rel="stylesheet")
+		link(href="/fonts/fontawesome/plugins/solid.css", rel="stylesheet")
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -45,7 +50,10 @@ html
 			h1#brand-name
 				a(href='/') Biblius
 			.search-bar
-				input
+				form(action='/query', method='get')
+					input(type="text"  name = 'name')
+					button.search-btn(type='submit' name = 'Name')
+						i.fas.fa-search
 			div(role="navigation").navbar.navbar-default
 				.container-fluid
 					.navbar-header

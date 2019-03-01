@@ -14,11 +14,12 @@ block content
 	.hero-image
 		img(src='/images/books.png')
 		h2 Potrzebujesz książki?
-		div Search:
+		p Wyszukaj
+		div
 			form(action='/query', method='get')
-
 				input(type="text"  name = 'name')
-				input.search(type='submit' name = 'Name')
+				button.search-btn(type='submit' name = 'Name')
+					i.fas.fa-search
 	.container
 		section
 			h3 Aktualności
