@@ -14,12 +14,14 @@ exports = module.exports = function (req, res) {
 								: `${addressLine1}, ${city},  ${zipcode}`;
 
 	if (keystone.session.cart) {
+		var a =0;
 		keystone.session.cart.forEach((item) =>{
+			a++
 		var newOrder = new Order.model({
 			name: { first: firstName, last: lastName },
 			email: email,
 			address: address,
-			orderId: 'abc123',
+			orderId: a,
 			products: item.id,
 			Qty: 1
 			
@@ -35,7 +37,9 @@ exports = module.exports = function (req, res) {
 			if (err) {
 				console.error(err);
 			} else {
-                newOrder.save();
+				 newOrder.save();
+				newOrder.orderId = newOrder._id;
+				newOrder.save();
 				keystone.session.cart = [];
 				res.redirect('/');
 			}

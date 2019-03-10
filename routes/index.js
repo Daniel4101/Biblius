@@ -43,8 +43,9 @@ exports = module.exports = function (app) {
 	app.all('/contact', routes.views.contact);
 	app.all('/register', routes.views.register);
 	app.get('/cart', routes.views.cart);
-	app.all('/login',routes.views.signin)
-	app.get('/query',routes.views.query)
+	app.all('/login',routes.views.signin);
+	app.get('/query',routes.views.query);
+	app.get('/signout', routes.views.singnout);
 	
 //API
 	app.all('/add-to-cart/:_id', routes.views.api.addToCart);

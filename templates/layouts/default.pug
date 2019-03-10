@@ -46,7 +46,8 @@ html
 
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 			//- ... or completely change this header to suit your design.
-				
+			if user
+				a(href='/signout') Wyloguj	
 			h1#brand-name
 				a(href='/') Biblius
 			.search-bar
@@ -103,7 +104,7 @@ html
 			.footer-bottom
 				p Daniel Biesiada
 				p Paweł Kolasiński
-			
+
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
 
 
