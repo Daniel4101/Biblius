@@ -1,0 +1,31 @@
+extends ../layouts/default
+mixin post(medium)
+	.medium(data-ks-editable=editable(user, { list: 'Media', id: medium.id }))
+		if medium.image.exists
+			img(src=medium._.image.fit(300,300)).img
+		h4: a.medium-title(href='/media/'  +medium.slug)= medium.title
+		p.status: = medium.state
+
+block content
+	.container: .row
+		.blog
+			each medium in media
+				+post(medium)
+				if media.totalPages > 1
+					ul.pagination
+						if media.previous
+							li: a(href='?page=' + media.previous): span.glyphicon.glyphicon-chevron-left
+						else
+							li.disabled: a(href='?page=' + 1): span.glyphicon.glyphicon-chevron-left
+						each p, i in media.pages
+							li(class=media.currentPage == p ? 'active' : null)
+								a(href='?page=' + (p == '...' ? (i ? media.totalPages : 1) : p ))= p
+						if media.next
+							li: a(href='?page=' + media.next): span.glyphicon.glyphicon-chevron-right
+						else
+							li.disabled: a(href='?page=' + media.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
+			else
+				if media.category
+					h3.text-muted Nie ma książek w tej kategorii #{data.category.name}.
+				else
+					h3.text-muted Niestety nie mamy takiej ksi??ki

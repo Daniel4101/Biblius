@@ -1,0 +1,38 @@
+extends ../layouts/default
+
+block content
+    .container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+        article
+            p: a(href='/media') &larr; back to the blog
+            hr
+            if !data.medium
+                h2 Invalid Post.
+            else
+                header
+                    h1= data.medium.title
+                    h5 Posted 
+                        if data.medium.publishedDate
+                            | on #{data.medium.publishedDate}
+                        if data.medium.url
+                            | on #{data.medium.url}                            
+                        if data.medium.author
+                            | by #{data.medium.author}
+                        if data.medium.Qty
+                            | qty #{data.medium.Qty}
+                        a(href='/add-to-cart/' + data.medium._id) dodaj do koszyka
+                        iframe(width='560', height='315', src= data.medium.url, frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+                        p to delete
+                        p to delete
+                        p to delete
+                        p to delete
+                        p to delete
+                        p to delete
+                        p to delete
+                        p to delete
+                        p to delete
+                        p to delete
+
+                .post
+                    if data.medium.image.exists
+                        .image-wrap: img(src=data.medium._.image.fit(750,450)).img-responsive
+                    != data.medium.content.full
