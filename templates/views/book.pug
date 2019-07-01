@@ -1,24 +1,45 @@
 extends ../layouts/default
+mixin post(book)
+    .book(data-ks-editable=editable(user, { list: 'Book', id: book.id }))
+        if book.image.exists
+            img(src=book._.image.fit(300,300)).img
+        h4: a.book-title(href='/books/book/'  +book.slug)= book.title
+        p.status: = book.state
 
 block content
-    .container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-        article
-            p: a(href='/blog') &larr; back to the blog
-            hr
-            if !data.book
-                h2 Invalid Post.
-            else
-                header
-                    h1= data.book.title
-                    h5 Posted 
-                        if data.book.publishedDate
-                            | on #{data.book.publishedDate} 
-                        if data.book.author
-                            | by #{data.book.author}
-                        if data.book.Qty
-                            | qty #{data.book.Qty}
-                        a(href='/add-to-cart/' + data.book._id) alelu
-                .post
-                    if data.book.image.exists
-                        .image-wrap: img(src=data.book._.image.fit(750,450)).img-responsive
-                    != data.book.content.full
+    section
+        .container: .row
+            article
+                p.back: a(href='/books') &larr; Wróć do książek
+                if !data.book
+                    h2 Invalid Post.
+                else
+                    h3= data.book.title
+                    .book-data
+                        .book-img
+                            if data.book.image.exists
+                                .image-wrap: img(src=data.book._.image.fit(750,450)).img-responsive
+                            != data.book.content.full
+                        .book-dsc
+                            h6 Autor: #{data.book.author}
+                            h6 Wydawnictwo: 
+                            h6 Data i miejsce wydania: #{data.book.publishedDate}
+                            h6 Kategoria: 
+                            h6 Status: 
+                                    if data.book.publishedDate
+                                    if data.book.author
+                            a.single-rent-btn(href='/add-to-cart/' + data.book._id) Wypożycz
+                .main-book
+                    .f-desc
+                        p #{data.book.content.extended}
+                    .s-desc
+                        h4 Podobne
+                        div
+                            //- each book in books
+                            //-     +post(book)
+                            //- else
+                            //-     if books.category
+                            //-         h3.text-muted Nie ma książek w tej kategorii #{data.category.name}.
+                            //-     else
+                            //-         h3.text-muted Niestety nie mamy takiej książki
+

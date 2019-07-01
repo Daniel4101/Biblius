@@ -1,16 +1,18 @@
 extends ../layouts/default
 block intro
-    .container
-        h1 Logowanie 
-    .container
-        .col-sm-8.col-md-6.row
-            form( action = '/login', method='POST')
-                .form-group
-                    label Email
-                    input(type='email', name='email', value=form.email).form-control
-                .form-group
-                    label Password
-                    input(type="password", name="password").form-control
-                .form-actions
-                    button(type='submit').btn.btn-primary Send
-                a(href='#') zresetuj hasło
+    .signin
+        section.signin-page
+            .container
+                h3 Logowanie 
+        .container
+            .col-sm-8.col-md-6.row
+                form( action = '/login', method='POST')
+                    .form-group
+                        label E-mail
+                        input.form-control(type='email', name='email', value=form.email)
+                    .form-group
+                        label Hasło
+                        input.form-control(type="password", name="password")
+                    .form-actions
+                        button.btn.sigin-btn(type='submit') Zaloguj
+                    a.rst-btn(href='#') Zresetuj hasło

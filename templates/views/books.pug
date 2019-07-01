@@ -9,7 +9,7 @@ mixin post(book)
 block intro
 	section.blog-page
 		.container
-			h3= books.BookCategry ? books.BookCategry.name : 'Ksi??ki'
+			h3= books.BookCategry ? books.BookCategry.name : 'Książki'
 
 block content
 	.container: .row
@@ -31,6 +31,6 @@ block content
 							li.disabled: a(href='?page=' + books.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
 			else
 				if books.category
-					h3.text-muted Nie ma ksi??ek w tej kategorii #{data.category.name}.
+					h3.text-muted Nie ma książek w tej kategorii #{data.category.name}.
 				else
-					h3.text-muted Niestety nie mamy takiej ksi??ki
+					h3.text-muted Niestety nie mamy takiej książki

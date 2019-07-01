@@ -5848,8 +5848,12 @@ a:hover {
   text-decoration: none;
   text-transform: none; }
 
+a:focus {
+  text-decoration: none;
+  text-transform: none; }
+
 #body {
-  padding-top: 154px; }
+  padding-top: 139px; }
 
 .back {
   margin-top: 30px; }
@@ -5863,37 +5867,37 @@ a:hover {
   position: fixed;
   width: 100%;
   z-index: 999; }
-
-#header h1 {
-  display: inline-block; }
-
-#header .search-bar {
-  padding-top: 25px;
-  display: inline-block;
-  float: right; }
-
-#header .search-bar input {
-  width: 380px;
-  height: 40px;
-  margin: auto;
-  padding: 5px;
-  border-radius: 12px;
-  border: 2px solid #fff;
-  background-color: #ebebeb; }
-
-#header .search-bar .search-btn {
-  position: relative;
-  top: -1px;
-  left: -39px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 12px;
-  background-color: #fff; }
+  #header h1 {
+    display: inline-block; }
+  #header .search-bar {
+    padding-top: 25px;
+    display: inline-block;
+    float: right; }
+    #header .search-bar input {
+      width: 380px;
+      height: 40px;
+      margin: auto;
+      padding: 5px;
+      border-radius: 12px;
+      border: 2px solid #fff;
+      background-color: #ebebeb; }
+    #header .search-bar .search-btn {
+      position: relative;
+      top: -1px;
+      left: -39px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 12px;
+      background-color: #fff; }
 
 .navbar.navbar-default {
   background: none;
-  border: none; }
+  border: none;
+  margin: 5px 0 0 0; }
+
+.nav.navbar-nav.navbar-left li {
+  padding: 0 20px; }
 
 .nav.navbar-nav.navbar-left li a {
   color: #0a0a0a;
@@ -5908,22 +5912,19 @@ a:hover {
   right: 0;
   bottom: 0;
   left: 0; }
-
-#footer .footer-bottom {
-  background-color: #fefbe3;
-  color: #0a0a0a;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
-
-#footer .footer-bottom p {
-  padding: 0 20px; }
-
-.footer-nav {
-  height: 60px; }
-
-.footer-nav .collapse.navbar-collapse ul li a {
-  line-height: 60px; }
+  #footer .footer-bottom {
+    background-color: #fefbe3;
+    color: #0a0a0a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    #footer .footer-bottom p {
+      padding: 0 20px; }
+  #footer .footer-nav {
+    height: 60px;
+    margin: 0; }
+    #footer .footer-nav .collapse.navbar-collapse ul li a {
+      line-height: 60px; }
 
 .gallery-image img {
   display: block;
@@ -5935,14 +5936,6 @@ a:hover {
   height: auto;
   margin: 0;
   padding: 0; }
-
-.hero-image h2,
-.hero-image p {
-  width: 100%;
-  text-align: center;
-  margin: auto;
-  position: relative;
-  top: -500px; }
 
 .hero-image h2 {
   font-size: 58px;
@@ -5959,31 +5952,36 @@ a:hover {
 
 .hero-image div {
   display: flex; }
+  .hero-image div form {
+    display: flex;
+    margin: auto; }
+  .hero-image div input {
+    height: 40px;
+    width: 400px;
+    margin: auto;
+    padding: 5px;
+    position: relative;
+    top: -470px;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    background-color: #ebebeb; }
+  .hero-image div .search-btn {
+    position: relative;
+    top: -470px;
+    left: -39px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background-color: #4b764b; }
 
-.hero-image div form {
-  display: flex;
-  margin: auto; }
-
-.hero-image div input {
-  height: 40px;
-  width: 400px;
+.hero-image h2,
+.hero-image p {
+  width: 100%;
+  text-align: center;
   margin: auto;
-  padding: 5px;
   position: relative;
-  top: -470px;
-  border-radius: 12px;
-  border: 2px solid #fff;
-  background-color: #ebebeb; }
-
-.hero-image div .search-btn {
-  position: relative;
-  top: -470px;
-  left: -39px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 12px;
-  background-color: #4b764b; }
+  top: -500px; }
 
 section h3 {
   display: inline;
@@ -5997,26 +5995,23 @@ section h3 {
   min-height: 1000px;
   background-image: url("../../images/red_books.png");
   background-size: cover; }
-
-.category h2 {
-  display: inline-block;
-  width: 48vw;
-  text-align: center;
-  position: relative;
-  top: 300px;
-  font-size: 70px;
-  font-weight: 800;
-  color: #4b764b; }
-
-.category ul {
-  display: inline-block;
-  list-style: none;
-  position: relative;
-  top: 360px; }
-
-.category ul li {
-  font-size: 24px;
-  padding: 20px 0; }
+  .category h2 {
+    display: inline-block;
+    width: 48vw;
+    text-align: center;
+    position: relative;
+    top: 300px;
+    font-size: 70px;
+    font-weight: 800;
+    color: #4b764b; }
+  .category ul {
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    top: 360px; }
+    .category ul li {
+      font-size: 24px;
+      padding: 20px 0; }
 
 .about {
   width: 100%;
@@ -6024,30 +6019,51 @@ section h3 {
   background-image: url("../../images/shelf.png");
   background-size: cover;
   margin: 0; }
+  .about h2 {
+    display: inline-block;
+    width: 48vw;
+    text-align: center;
+    position: relative;
+    top: 250px;
+    font-size: 90px;
+    font-weight: 800;
+    color: #4b764b; }
+  .about div {
+    width: 48vw;
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    top: 300px; }
+    .about div p {
+      width: 70%; }
 
-.about h2 {
-  display: inline-block;
-  width: 48vw;
-  text-align: center;
+.signin {
+  background-image: url("../../images/red_books.png");
+  background-size: cover;
+  height: 84vh; }
+
+.signin-page {
+  padding: 60px 0 20px 0; }
+
+.sigin-btn {
+  width: 120px;
+  height: 40px;
+  background-color: #4b764b;
+  color: #0a0a0a;
+  font-size: 16px;
+  font-family: "Lato";
+  font-weight: 500; }
+
+.rst-btn {
+  color: #0a0a0a;
   position: relative;
-  top: 250px;
-  font-size: 90px;
-  font-weight: 800;
-  color: #4b764b; }
-
-.about div {
-  width: 48vw;
-  display: inline-block;
-  list-style: none;
-  position: relative;
-  top: 300px; }
-
-.about div p {
-  width: 70%; }
+  top: -28px;
+  float: right; }
 
 .register {
   background-image: url("../../images/red_books.png");
-  background-size: cover; }
+  background-size: cover;
+  height: 84vh; }
 
 .register-page {
   padding: 60px 0 20px 0; }
@@ -6077,23 +6093,24 @@ section h3 {
   padding: 20px;
   margin: 20px 0;
   border-right: 1px solid #0a0a0a; }
-
-.post .lead {
-  font-size: 16px;
-  text-align: right; }
-
-.post h2 {
-  font-weight: 800; }
-
-.post img {
-  display: flex;
-  margin: auto; }
+  .post .lead {
+    font-size: 16px;
+    text-align: right; }
+  .post h2 {
+    font-weight: 800; }
+  .post p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical; }
+  .post img {
+    display: flex;
+    margin: auto; }
 
 .single-post {
   margin-bottom: 175px; }
-
-.single-post img {
-  margin-bottom: 20px; }
+  .single-post img {
+    margin-bottom: 20px; }
 
 .single-header h5 {
   float: right;
@@ -6121,9 +6138,8 @@ section h3 {
   display: inline-block;
   margin: 20px;
   width: 20%; }
-
-.book img {
-  width: 100%; }
+  .book img {
+    width: 100%; }
 
 .book-title {
   color: #4b764b;
@@ -6139,3 +6155,29 @@ section h3 {
 .status {
   text-align: center;
   border-top: 1px solid #0a0a0a; }
+
+.book-data {
+  display: block;
+  margin-top: 30px; }
+  .book-data .book-img {
+    display: inline-block; }
+  .book-data .book-dsc {
+    display: inline-block;
+    margin-left: 15%;
+    position: relative;
+    top: -287px; }
+    .book-data .book-dsc h6 {
+      margin: 20px 0; }
+    .book-data .book-dsc .single-rent-btn {
+      background-color: #4b764b;
+      color: #0a0a0a;
+      font-weight: 700;
+      padding: 15px 80px;
+      border-radius: 15px; }
+
+.main-book {
+  margin: 30px 0 150px 0;
+  border-top: 1px solid #0a0a0a;
+  display: block; }
+  .main-book .s-desc h4 {
+    color: #4b764b; }
