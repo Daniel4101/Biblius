@@ -37,6 +37,10 @@ a:focus {
 	margin-top: 30px;
 }
 
+.alert-danger {
+	margin: 20px 0;
+}
+
 //** HEADER **//
 
 #brand-name {
@@ -74,6 +78,9 @@ a:focus {
 			border: none;
 			border-radius: 12px;
 			background-color: $white;
+			:hover {
+				color: $main-green;
+			}
 		}
 	}
 }
@@ -86,6 +93,9 @@ a:focus {
 	
 .nav.navbar-nav.navbar-left li {
 	padding: 0 20px;
+	:hover {
+		background-color: $hover-gray;
+	}
 }
 
 .nav.navbar-nav.navbar-left li a {
@@ -179,6 +189,9 @@ a:focus {
 			border: none;
 			border-radius: 12px;
 			background-color: $main-green;
+			:hover {
+				color: $hover-gray;
+			}
 		}
 	}
 }
@@ -423,16 +436,22 @@ section h3 {
 		display: inline-block;
 		margin-left: 15%;
 		position: relative;
-		top: -287px;
+		top: -270px;
 		h6 {
 			margin: 20px 0;
 		}
 		.single-rent-btn {
 			background-color: $main-green;
 			color: $text-black;
+			font-size: 20px;
 			font-weight: 700;
-			padding: 15px 80px;
+			padding: 20px 90px;
 			border-radius: 15px;
+			position: relative;
+			top: 40px;
+			:hover {
+				color: $hover-gray;
+			}
 		}
 	}
 }

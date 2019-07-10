@@ -19,7 +19,6 @@ exports = module.exports = function (req, res) {
         locals.data.book = result;
         next(err)
     });
-   
 });
 
 view.render('book');

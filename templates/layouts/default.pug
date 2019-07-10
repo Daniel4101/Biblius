@@ -45,9 +45,7 @@ html
 		#header: .container
 
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-			//- ... or completely change this header to suit your design.
-			if user
-				a(href='/signout') Wyloguj	
+			//- ... or completely change this header to suit your design.	
 			h1#brand-name
 				a(href='/') Biblius
 			.search-bar
@@ -67,6 +65,8 @@ html
 						ul.nav.navbar-nav.navbar-left
 							each link in navLinks
 								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+							if user
+								li: a(href='/signout') Wyloguj
 
 		//- BODY
 		#body
@@ -80,7 +80,7 @@ html
 
 			//- Flash messages allow you to display once-off status messages to users, e.g. form
 			//- validation errors, success messages, etc.
-			+flash-messages(messages)
+			
 
 			//- The content block should contain the body of your template's content
 			block content

@@ -1,5 +1,5 @@
 extends ../layouts/default
-block intro
+block content
 	.register
 		section.register-page
 			.container
@@ -26,4 +26,5 @@ block intro
 						label Powtórz hasło
 						input.form-control(type="password", name="passwordAgain")
 					.form-actions
-						button.btn.register-btn(type='submit') Send
+						button.btn.register-btn(type='submit') Zarejestruj się
+					+flash-messages(messages)

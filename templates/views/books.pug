@@ -1,10 +1,11 @@
 extends ../layouts/default
 mixin post(book)
-	.book(data-ks-editable=editable(user, { list: 'Book', id: book.id }))
-		if book.image.exists
-			img(src=book._.image.fit(300,300)).img
-		h4: a.book-title(href='/books/book/'  +book.slug)= book.title
-		p.status: = book.state
+	a(href='/books/book/'  +book.slug)
+		.book(data-ks-editable=editable(user, { list: 'Book', id: book.id }))
+			if book.image.exists
+				img(src=book._.image.fit(300,300)).img
+			h4: a.book-title(href='/books/book/'  +book.slug)= book.title
+			p.status: = book.state
 
 block intro
 	section.blog-page

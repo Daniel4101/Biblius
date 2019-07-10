@@ -19,12 +19,11 @@ var keystone = require('keystone');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
 		{ label: 'Register', key: 'register', href: '/register' },
 		{ label: 'Login', key: 'login', href: '/login' },
-		{ label: 'Ksi??ki', key: 'books', href: '/books' },
-		{ label: 'Media', key: 'media', href: '/media' },
-		{ label: 'Filmy i grafika', key: 'gallery', href: '/gallery' },
+		{ label: 'Książki', key: 'books', href: '/books' },
+		// { label: 'Media', key: 'media', href: '/media' },
+		{ label: 'Media', key: 'gallery', href: '/gallery' },
 		{ label: 'Aktualności', key: 'blog', href: '/blog' },
 		{ label: 'O bibliotece', key: 'contact', href: '/contact' },
 	];
