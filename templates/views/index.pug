@@ -6,7 +6,7 @@ mixin post(post)
 			if post.publishedDate
 				| #{post._.publishedDate.format('DD.MM.YYYY')}
 		if post.image.exists
-			img(src=post._.image.fit(320, 320)).img
+			img(src=post._.image.fit(320, 320)).img.img-responsive
 		h2: a(href='/blog/post/' + post.slug)= post.title
 		p: a(href='/blog/post/' + post.slug)!= post.content.brief
 
