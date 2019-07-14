@@ -92,7 +92,7 @@ a:focus {
 }
 	
 .nav.navbar-nav.navbar-left li {
-	padding: 0 20px;
+	padding: 0 10px;
 	:hover {
 		background-color: $hover-gray;
 	}
@@ -468,4 +468,38 @@ section h3 {
 }
 
 
+//** CART **//
+
+.cart-page {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+
+.order-list {
+	margin-bottom: 100px;
+	.single-order {
+		padding: 20px;
+		border-bottom: 1px solid $text-black;
+		p, h4 {
+			display: inline-block;
+		}
+		.delete-btn {
+			float: right;
+			:hover {
+				color: $main-green;
+			}
+		}
+		.order-btn {
+			float: right;
+			padding-right: 10px;
+		}
+	}
+	.empty-list {
+		padding: 20px;
+		p {
+			font-weight: 700;
+		}
+	}
+	
+}
 

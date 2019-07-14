@@ -16,7 +16,7 @@ exports = module.exports = function (req, res) {
 				id: item._id,
 				name: item.title,
 				quantity: 1,
-				//imageUrl: item.image.url,
+				// imageUrl: item.image.url,
 			};
 		} else {
 			cartContents[item._id].quantity++;
