@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
-    "acorn": "^6.0.4",
+    "acorn": "^6.4.1",
     "async": "2.1.4",
     "dotenv": "4.0.0",
     "git": "^0.1.5",
